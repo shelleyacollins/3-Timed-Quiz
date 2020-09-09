@@ -26,40 +26,50 @@ You are required to submit the following for review:
 * The URL of the functional, deployed application.
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project. -->
+
+
+<!-- // use an object so you can use your button click to compare -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coding Quiz</title>
-</head>
-<body>
-    <div id="start">View High Scores</div>
-      <div id="container">
-      <h1>Coding Quiz Challenge</h1>
-      <br>
-      <h3>Try to answer the following code-related questions within the time 
-          limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h3>
-        <div id="quiz" style="display: none">
-          <div id="question"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coding Quiz</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+        <body>
+            <div id="high scores"> View High Scores </div>
+            <div id="quiz"></div>
+            <button id="submit">Submit Quiz</div>
+            <div id="scoreContainer"></div>
+                <img src="assets\JavaScript Logo.jpg">
+            </body>
+        
+            <div id="container">
+                <h1>Coding Quiz Challenge</h1>
+                <br>
+                <h3>Try to answer the following code-related questions within the time 
+                limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h3>
+            <div id="quiz" style="display: none">
+            <div id="question"></div>
             <div id="choices">
                 <div class="choice" id="1" onclick="checkAnswer('1')"></div>
                 <div class="choice" id="2" onclick="checkAnswer('2')"></div>
                 <div class="choice" id="3" onclick="checkAnswer('3')"></div>
                 <div class="choice" id="4" onclick="checkAnswer('4')"></div>
-                <div class="choice" id="5" onclick="checkAnswer('4')"></div>
-              <div id="timer">
-                <div id="counter"></div>
-                  <div id="btimeGauge"></div>
-                    <div id="timeGauge"></div>
-                      <div id="progress"></div>
-                        <div id="scoreContainer" style="display: none"></div>
-             </div>
-           </div>
-         </div>
-       </div>
+                <div class="choice" id="5" onclick="checkAnswer('5')"></div>
+            <div id="timer">
+            <div id="counter"></div>
+            <div id="btimeGauge"></div>
+            <div id="timeGauge"></div>
+            <div id="progress"></div>
+            <div id="scoreContainer" style="display: none"></div>
+            </div>
+            </div>
+            </div>
+            </div>
 
 <script src="script.js"></script>
 
-</body>
+        </body>
 </html>
