@@ -1,4 +1,4 @@
- <!-- Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+<!-- Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
 
 ```
 AS A coding bootcamp student
@@ -27,23 +27,40 @@ You are required to submit the following for review:
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project. -->
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Quiz</title>
+</head>
+<body>
+    <div id="start">View High Scores</div>
+      <div id="container">
+      <h1>Coding Quiz Challenge</h1>
+      <br>
+      <h3>Try to answer the following code-related questions within the time 
+          limit. Keep in mind that incorrect answers will penalize your score/time 
+          by ten seconds!</h3>
+        <div id="quiz" style="display: none">
+          <div id="question"></div>
+          <div id="choices">
+            <div class="choice" id="1" onclick="checkAnswer('1')"></div>
+            <div class="choice" id="2" onclick="checkAnswer('2')"></div>
+            <div class="choice" id="3" onclick="checkAnswer('3')"></div>
+            <div class="choice" id="4" onclick="checkAnswer('4')"></div>
+            <div class="choice" id="5" onclick="checkAnswer('4')"></div>
+    <div id="timer">
+      <div id="counter"></div>
+        <div id="btimeGauge"></div>
+          <div id="timeGauge"></div>
+            <div id="progress"></div>
+              <div id="scoreContainer" style="display: none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<script src="script.js"></script>
+
+</body>
 </html>
