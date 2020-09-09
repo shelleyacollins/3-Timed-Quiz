@@ -1,21 +1,17 @@
-console.log(constants);
+const start = document.getElementById("start");
+const quiz = document.getElementById("quiz");
+const question = document.getElementById("question");
+const choice1 = document.getElementById("4");("1");
+const choice2 = document.getElementById("4");("2");
+const choice3 = document.getElementById("3");("3");
+const choice4 = document.getElementById("3");("4");
+const choice5 = document.getElementById("2");("5");
+const counter = document.getElementById("counter");
+const timeGauge = document.getElementById("timeGauge");
+const progress = document.getElementById("progress");
+const scoreDiv = document.getElementById("scoreContainer");
 
-const start = document.getEl("start");
-const quiz = document.getEl("quiz");
-const question = document.getEl("question");
-const choice1 = document.getEl("4");("1");
-const choice2 = document.getEl("4");("2");
-const choice3 = document.getEl("3");("3");
-const choice4 = document.getEl("3");("4");
-const choice5 = document.getEl("2");("5");
-const counter = document.getEl("counter");
-const timeGauge = document.getEl("timeGauge");
-const progress = document.getEl("progress");
-const scoreDiv = document.getEl("scoreContainer");
-
-console.log(questions);
-
-let questions = [
+var questions = [
 
     {
         question :"Arrays in JavaScript can be used to store _____.",
@@ -58,4 +54,16 @@ let questions = [
 
     }
 
-];
+    ];
+    var countdownEl = document.getElementById("countdown");
+    var textEl = document.getElementById("text");
+
+    countdownEl.textContent = "New text";
+    textEl.textContent = "More text";
+
+    var speedInMilliseconds = prompt("Start Quiz");
+
+    console.log(questions);
+    for (var i = 0; i < document.length; i++) {
+    
+    }
