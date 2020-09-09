@@ -16,9 +16,28 @@ function showResults(){}
 buildQuiz();
 
 // on submit, show results
-submitButton.addEventListener('click', showResults);
+document.addEventListener('DOMContentLoaded', () {
+  const timeLeftDisplay = document.querySelector('#time-left')
+  const startBtn = document.querySelector('#start-button')
+  timeLeft = 10
 
-const quizQuestions = [
+  function countDown(){
+    setInterval(function(){
+      if(timeLeft <= 0 ) {
+        clearInterval(timeLeft = 0)
+        }                      
+        timeLeftDisplay.innerHTML = timeLeft
+        timeLeft -=1
+    }, 1000)
+  }
+
+  startBtn.addEventListener('click', countDown)
+
+})
+    
+
+
+var questions = [
     {
         question :"1. Arrays in JavaScript can be used to store _____.",
         choice1 : "Wrong",
@@ -61,47 +80,3 @@ const quizQuestions = [
     }
 
 ]
-myQuestions.forEach(
-    (currentQuestion, questionNumber) => {
-        
-    const answers = [];
-    for(number in quizQuestions.answers){
-
-        answers.push(
-            `<quizAnswers>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-          );
-// for each question...
-myQuestions.forEach(
-    (currentQuestion, questionNumber) => {
-
-      // variable to store the list of possible answers
-      const answers = [];
-
-      // and for each available answer...
-      for(number in currentQuestion.answers){
-
-        // ...add an HTML radio button
-        answers.push(
-          `<label>
-            <input type="radio" name="question${questionNumber}" value="${letter}">
-            ${letter} :
-            ${currentQuestion.answers[letter]}
-          </label>`
-        );
-      }
-
-      // add this question and its answers to the output
-      output.push(
-        `<div class="question"> ${currentQuestion.question} </div>
-        <div class="answers"> ${answers.join('')} </div>`
-      );
-    }
-  );
-
-  // finally combine our output list into one string of HTML and put it on the page
-  quizContainer.innerHTML = output.join('');
-}      }
