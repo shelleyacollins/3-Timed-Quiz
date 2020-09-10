@@ -48,10 +48,26 @@ let questions = [
         choice4 : "<4.square brackets",
         answer: 2
     },
-    {
-    
+       
 ]
 
+// Constants
+const MAX_QUESTIONS = 5
+
+startQuiz = () => {
+        questionCounter - 0;
+        score - 0
+        availableQuestions = [...questions];
+        console.log(availableQuestions);
+        getNewQuestion();
+};
+
+getNewQuestion = () => {
+
+    questionCounter++;
+}
+
+startQuiz();
 
 
 
