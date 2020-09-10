@@ -2,13 +2,8 @@
 <button id="submit">Submit Quiz</button>
 <div id="results"></div>
 
-// Constants
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
-
 // Timer
-document.addEventListener('DOMContentLoaded', () {
+  .document.addEventListener('DOMContentLoaded', () {
   const timeLeftDisplay = document.querySelector('#time-left')
   const startBtn = document.querySelector('#start-button')
   timeLeft = 10
@@ -34,16 +29,7 @@ let questions = [
         choice3 : "<3.booleans",
         choice4 : "<4.all of the above",
         answer: 4
-
-        if(answer=correct()) {
-            showScores();
-        }
-        else {
-            // show question
-            var element = document.getElementById("question");
-            element.innerHTML = quiz.getQuestionIndex().text;
     },
-
     {
         question :"A very useful tool used during development and debugging for printing content to the debugger is:",
         choice1 : "<1.JavaScript",
