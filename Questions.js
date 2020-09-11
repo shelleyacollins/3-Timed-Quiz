@@ -1,43 +1,29 @@
 // Quiz Questions and Answers
-let questions = [{
-        question: "Arrays in JavaScript can be used to store _____.",
-        choice1: "<1.numbers and strings",
-        choice2: "<2.other arrays",
-        choice3: "<3.booleans",
-        choice4: "<4.all of the above",
-        answer: 4
+var questions = [{
+        title: "Arrays in JavaScript can be used to store _____.",
+        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        answer: "all of the above",
     },
     {
-        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-        choice1: "<1.JavaScript",
-        choice2: "<2.terminal/bash",
-        choice3: "<3.for loops",
-        choice4: "<4.console log",
-        answer: 4
+
+        title: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choices: ["JavaScript", "terminal/bash", "for loops", "console log"],
+        answer: "console log",
     },
     {
-        question: "String values must be enclosed within_____ when being assigned to variables.",
-        choice1: "<1.commas",
-        choice2: "<2.curly brackets",
-        choice3: "<3.quotes",
-        choice4: "<4.parenthesis",
-        answer: 3
+        title: "String values must be enclosed within_____ when being assigned to variables.",
+        choices: ["commas", "curly brackets", "quotes", "parenthesis"],
+        answer: "quotes",
     },
     {
-        question: "Commonly used data types DO NOT include:",
-        choice1: "<1.strings",
-        choice2: "<2.booleans",
-        choice3: "<3.alerts",
-        choice4: "<4.numbers",
-        answer: 3
+        title: "Commonly used data types DO NOT include:",
+        choices: ["strings", "booleans", "alerts", "numbers"],
+        answer: "alerts",
     },
     {
-        question: "The condition in an if/else statement is enclosed within _____.",
-        choice1: "<1.quotes",
-        choice2: "<2.curly brackets",
-        choice3: "<3.parenthesis",
-        choice4: "<4.square brackets",
-        answer: 2
+        title: "The condition in an if/else statement is enclosed within _____.",
+        choices: ["quotes", "curly brackets", "parenthesis", "square brackets"],
+        answer: "curly brackets",
     },
 
 ]
