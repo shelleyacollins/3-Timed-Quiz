@@ -3,6 +3,7 @@ $(document).ready(function() {
 
     $("#start-quiz").on("click", function() {
         // Hide the welcome screen
+        $('#welcome-screen").').attr("style", "display: none");
         // Start the timer
         //Show the first question.
         alert("Start the Quiz!");
