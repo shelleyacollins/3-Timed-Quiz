@@ -10,10 +10,13 @@ $(document).ready(function() {
         var h1El = $("<h1>");
         h1El.text("Arrays in JavaScript can be used to store _____.")
 
-        var buttonEl = $("<button" > );
-        buttonEl.addClass("btn btn-secondary");
-        btn.text("2");
+        for (var i = 0; i < 4; i++) {
+            var buttonEl = $("<button" > );
+            buttonEl.addClass("btn btn-secondary");
+            btn.text("2");
+        }
         questionDiv.append(h1El);
+        questionDiv.append(buttonEl);
 
         alert("Start the Quiz!");
     });
