@@ -29,54 +29,57 @@ $(document).ready(function() {
                     setTimeout(function() {
                         correctIndicatorEl.text("");
                     }, 1000);
+                }
 
-                    // Start the timer
-                    $("#start-game").on("click", function() {
-                        $("#welcome-screen").attr("style", "display: none");
-                        timeInterval = setInterval(function() {
-                            $("#time-remaining").text(timeRemaining);
-                            timeRemaining--;
-                        }, 1000);
+                // Start the timer
+                $("#start-game").on("click", function() {
+                    $("#welcome-screen").attr("style", "display: none");
+                    timeInterval = setInterval(function() {
+                        $("#time-remaining").text(timeRemaining);
+                        timeRemaining--;
+                    }, 1000);
 
-                        //Show the questions
+                });
+                //Show the questions
+                displayQuestion();
+
+                $("#question").on("click", "answer", function() {
+                    if (
+                        $(this).attr("data-choice") === questions[currentQuestionIndex].answer) {
+                        setAndClearIndicator("Correct!");
+                    } else {
+                        setAndClearIndicator("Incorrect!");
+                        timeRemaining = timeRemaining - 10;
+                    }
+
+                    if (currentQuestionIndex < questions.length - 1) {
+                        currentQuestionIndex++;
                         displayQuestion();
-                    });
+                    } else {
+                        clearInterval(timeInterval);
+                        questionDiv.attr("style", "display: none");
+                        $("#save-screen").attr("style", "display: block");
+                    }
+                });
 
-                    $("#question").on("click", "answer", function() {
-                        if (
-                            $(this).attr("data-choice") === questions[currentQuestionIndex].answer) {
-                            setAndClearIndicator("Correct!");
-                        } else {
-                            setAndClearIndicator("Incorrect!");
-                            timeRemaining = timeRemaining - 10;
-                        }
+                $("#save-game").on("click", function() {
+                    var highScores = JSON.parse(localStorage.getItem("highscores"));
 
-                        if (currentQuestionIndex < questions.length - 1) {
-                            currentQuestionIndex++;
-                            displayQuestion();
-                        } else {
-                            clearInterval(timeInterval);
-                            questionDiv.attr("style", "display: none");
-                            $("#save-screen").attr("style", "display: block");
-                        }
-                    });
+                    if (!highScores) {
+                        highScores = [];
+                    }
 
-                    $("#save-game").on("click", function() {
-                        var highScores = JSON.parse(localStorage.getItem("highscores"));
+                    var userInitials =
+                        $("#user-initials").val()
 
-                        if (!highScores) {
-                            highScores = [];
-                        }
+                    var currentHighScore = {
+                        user: userInitials,
+                        score: timeRemaining,
+                    };
 
-                        var userInitials =
-                            $("#user-initials").val()
+                    highScores.push(currentHighScore);
+                    localStorage.setItem("highscores", JSON.stringify(highScores));
 
-                        var currentHighScore = {
-                            user: userInitials,
-                            score: timeRemaining,
-                        };
+                });
 
-                        highScores.push(currentHighScore);
-                        localStorage.setItem("highscores", JSON.stringify(highScores));
-
-                    });
+            });
