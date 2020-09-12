@@ -9,6 +9,7 @@ $(document).ready(function() {
                 questionDiv.empty();
                 var h1El = $("<h1>");
                 h1El.text(questions[currentQuestionIndex].title);
+                questionDiv.append(h1El);
                 h1El.text("Arrays in JavaScript can be used to store _____.");
                 questionDiv.append(h1El);
                 var ulEl = $("<ul>");
