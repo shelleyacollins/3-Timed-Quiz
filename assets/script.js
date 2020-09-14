@@ -35,13 +35,12 @@ $(document).ready(function() {
         }, 1000);
     }
 
-    $("#start-game").on("click", function() {
+    $("#start-quiz").on("click", function() {
         $("#welcome-screen").attr("style", "display: none");
         timeInterval = setInterval(function() {
             $("#time-remaining").text(timeRemaining);
             timeRemaining--;
         }, 1000);
-
         displayQuestion();
     });
 
@@ -72,7 +71,7 @@ $(document).ready(function() {
         }
 
         var userInitials = $("#user-initials").val();
-        console.log(userInitials);
+
 
         var currentHighScore = {
             user: userInitials,
