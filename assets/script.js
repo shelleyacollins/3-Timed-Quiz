@@ -64,20 +64,40 @@ $(document).ready(function() {
     });
 
     $("#save-game").on("click", function() {
+
+
+
+        var userInitials = $("#user-initials").val();
+
+
         var highScores = JSON.parse(localStorage.getItem("highscores"));
 
         if (!highScores) {
             highScores = [];
         }
-
-        var userInitials = $("#user-initials").val();
-
-
         var currentHighScore = {
             user: userInitials,
             score: timeRemaining,
         };
         highScores.push(currentHighScore);
         localStorage.setItem("highscores", JSON.stringify(highScores));
+        highScores = JSON.parse(localStorage.getItem("highscores"));
+
+        var sortedHighscores = highScores.sort(function(a, b) {
+            return b.score - a.score
+        })
+        console.log(sortedHighscores, sortedHighscores[0])
+
+        $("#high-score").text("High score:" + JSON.stringify(sortedHighscores[0].score))
+        $("#save-score").attr("style", "display:none")
+        $("#show-score").attr("style", "display:block")
     });
+
+
+    $(".goback").on("click", function() {
+        location.reload()
+    })
+    $(".clear").on("click", function() {
+        localStorage.clear()
+    })
 });
