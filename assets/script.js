@@ -88,7 +88,7 @@ $(document).ready(function() {
         })
         console.log(sortedHighscores, sortedHighscores[0])
 
-        $("#high-score").text("High score:" + JSON.stringify(sortedHighscores[0].score))
+        $("#high-score").text("High Score:" + JSON.stringify(sortedHighscores[0].score))
         $("#save-score").attr("style", "display:none")
         $("#show-score").attr("style", "display:block")
     });
